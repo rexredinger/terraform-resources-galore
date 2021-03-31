@@ -1,5 +1,6 @@
 resource "random_id" "random" {
   count = 9999
+  name = count.index
   
   keepers = {
     uuid = "${uuid()}"
@@ -9,6 +10,6 @@ resource "random_id" "random" {
 }
 
 output "buckets" {  
-   value = random_id.random[count.index]
+   value = random_id.random[name]
 }
 
