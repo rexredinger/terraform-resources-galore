@@ -9,6 +9,6 @@ resource "random_id" "random" {
 }
 
 output "buckets" {  
-   value = random_id.random[count.index].uuid
+   value = random_id.random[count.index]
 }
 
