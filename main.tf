@@ -1,6 +1,5 @@
 resource "random_id" "random" {
   count = 9999
-  bucket = count.index
 
   keepers = {
     uuid = "${uuid()}"
@@ -10,6 +9,6 @@ resource "random_id" "random" {
 }
 
 output "random" {  
-   value = random_id.random[bucket]
+   value = random_id.random.*
 }
 
