@@ -1,7 +1,7 @@
 resource "random_id" "random" {
   count = 9999
-  name = count.index
-  
+  bucket = count.index
+
   keepers = {
     uuid = "${uuid()}"
   }
@@ -9,7 +9,7 @@ resource "random_id" "random" {
   byte_length = 8
 }
 
-output "buckets" {  
-   value = random_id.random[name]
+output "random" {  
+   value = random_id.random[bucket]
 }
 
