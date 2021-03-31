@@ -8,6 +8,6 @@ resource "random_id" "random" {
   byte_length = 8
 }
 
-output "random" {
-  value = "output"
+output "buckets" {
+  value = ["${random_id.random[count.index]}"]
 }
