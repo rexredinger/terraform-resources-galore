@@ -1,5 +1,6 @@
 resource "random_id" "random" {
   count = 9999
+  name = "random_${uuid()}"
 
   keepers = {
     uuid = "${uuid()}"
