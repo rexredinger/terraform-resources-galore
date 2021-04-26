@@ -1,5 +1,5 @@
 resource "random_id" "random" {
-  count = 1000
+  count = 900
 
   keepers = {
     uuid = "${uuid()}"
