@@ -1,10 +1,10 @@
-variable "count" {
+variable "amount" {
   type = "number"
   default = 1
 }
 
 resource "random_id" "random" {
-  count = var.count
+  count = var.amount
   
   keepers = {
     uuid = "${uuid()}"
