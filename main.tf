@@ -1,5 +1,5 @@
 variable "amount" {
-  type = "number"
+  type = number
   default = 1
 }
 
