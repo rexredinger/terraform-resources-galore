@@ -1,6 +1,11 @@
-resource "random_id" "random" {
-  count = 855
+variable "count" {
+  type = "number"
+  default = 1
+}
 
+resource "random_id" "random" {
+  count = var.count
+  
   keepers = {
     uuid = "${uuid()}"
   }
