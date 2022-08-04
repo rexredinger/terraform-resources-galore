@@ -1,18 +1,9 @@
-variable "amount" {
-  type = number
-  default = 1
+provider "tfe" {
+  hostname = var.hostname
 }
 
-resource "random_id" "random" {
-  count = var.amount
-  
-  keepers = {
-    uuid = "${uuid()}"
-  }
-
-  byte_length = 8
+resource "tfe_workspace" "initiald" {
+  organization = var.organization
+  name = "Initial D"
 }
 
-output "random" {  
-   value = random_id.random.*
-}
