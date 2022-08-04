@@ -4,6 +4,6 @@ provider "tfe" {
 
 resource "tfe_workspace" "initiald" {
   organization = var.organization
-  name = "Initial D"
+  name = "Initial_D"
 }
 
