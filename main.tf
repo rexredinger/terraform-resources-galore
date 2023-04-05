@@ -18,3 +18,11 @@ check "Initial_D_check" {
     error_message = "Your Initial_D workspace isn't anymore"
   }
 }
+
+check "time_thing" {
+  
+  assert {
+    condition = timecmp(timestamp(), timestamp()) > 0
+    error_message = "wut?"
+  }
+}
