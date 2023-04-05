@@ -14,7 +14,7 @@ check "Initial D check" {
   }
   
   assert {
-    condition = data.tfe_workspace.ws.name == "Initial_D
+    condition = data.tfe_workspace.ws.name == "Initial_D"
     error_message = "Your Initial_D workspace isn't anymore"
   }
 }
