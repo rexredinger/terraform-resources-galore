@@ -7,7 +7,7 @@ resource "tfe_workspace" "initiald" {
   name = "Initial_D"
 }
 
-check "Initial D check" {
+check "Initial_D_check" {
   data "tfe_workspace" "ws" {
     name = "Initial_D"
     organization = var.organization
