@@ -20,9 +20,11 @@ check "Initial_D_check" {
 }
 
 check "time_thing" {
-  
+  locals {
+    timetime = timestamp()
+  }
   assert {
-    condition = timecmp(timestamp(), timestamp()) > 0
+    condition = timecmp(local.timetime, timestamp()) > 0
     error_message = "wut?"
   }
 }
