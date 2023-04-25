@@ -13,7 +13,6 @@ resource "tfe_workspace" "pets" {
   vcs_repo {
     identifier = "rexredinger/terraform-resources-galore"
     branch = "pets"
-    oauth_token_id = var.oauth_token_id
   }
 }
 
