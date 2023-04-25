@@ -13,3 +13,7 @@ variable "parent_workspace" {
 variable "workspace_count" {
   type = number
 }
+
+variable "github_app_installation_id" {
+  type = string
+}

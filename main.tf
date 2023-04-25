@@ -13,6 +13,7 @@ resource "tfe_workspace" "pets" {
   vcs_repo {
     identifier = "rexredinger/terraform-resources-galore"
     branch = "pets"
+    github_app_installation_id = var.github_app_installation_id
   }
 }
 
