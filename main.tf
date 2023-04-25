@@ -11,8 +11,8 @@ resource "tfe_workspace" "pets" {
   terraform_version = "latest"
 
   vcs_repo {
-    identifier = "rexredinger/terraform-resources-galore"
-    branch = "pets"
+    identifier = "rexredinger/tfpets"
+    branch = "main"
     github_app_installation_id = var.github_app_installation_id
   }
 }
