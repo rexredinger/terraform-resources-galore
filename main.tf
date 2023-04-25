@@ -6,7 +6,7 @@ resource "tfe_workspace" "pets" {
   count = var.workspace_count
   organization = var.organization
   name = format("pets_workspace_%s", count.index)
-  execution_mode = "remote"
+  execution_mode = "1.4.5"
   auto_apply = true
   terraform_version = latest
 
