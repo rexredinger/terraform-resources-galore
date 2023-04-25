@@ -20,9 +20,9 @@ resource "tfe_workspace" "pets" {
   terraform_version = random_shuffle.tf_version.result[0]
 
   vcs_repo {
-    identifier = tfe_workspace.parent.vcs_repo.identifier
+    identifier = data.tfe_workspace.parent.vcs_repo.identifier
     branch = "pets"
-    oauth_token_id = tfe_workspace.parent.vcs_repo.oauth_token_id
+    oauth_token_id = data.tfe_workspace.parent.vcs_repo.oauth_token_id
   }
 }
 
