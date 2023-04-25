@@ -2,27 +2,18 @@ provider "tfe" {
   hostname = var.hostname
 }
 
-data "tfe_workspace" "parent" {
-  name = var.parent_workspace
-  organization = var.organization
-}
-
-resource "random_shuffle" "tf_version" {
-  input = ["1.2.4", "1.3.1", "1.4.5", "latest"]
-}
-
 resource "tfe_workspace" "pets" {
   count = var.workspace_count
   organization = var.organization
   name = format("pets_workspace_%s", count.index)
   execution_mode = "remote"
   auto_apply = true
-  terraform_version = random_shuffle.tf_version.result[0]
+  terraform_version = latest
 
   vcs_repo {
     identifier = "rexredinger/terraform-resources-galore"
     branch = "pets"
-    oauth_token_id = data.tfe_workspace.parent.vcs_repo[0].oauth_token_id
+    oauth_token_id = var.oauth_token_id
   }
 }
 

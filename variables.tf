@@ -13,3 +13,7 @@ variable "parent_workspace" {
 variable "workspace_count" {
   type = number
 }
+
+variable "oauth_token_id" {
+  type = string
+}
