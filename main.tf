@@ -1,18 +1,32 @@
-variable "amount" {
-  type = number
-  default = 1
-}
-
-resource "random_id" "random" {
-  count = var.amount
-  
-  keepers = {
-    uuid = "${uuid()}"
+resource "null_resource" "sleep1" {
+  provisioner "local-exec" {
+    command = "sleep 5m"
   }
-
-  byte_length = 8
+  triggers = {
+    always = uuid()
+  }
 }
 
-output "random" {  
-   value = random_id.random.*
+resource "null_resource" "sleep2" {
+  provisioner "local-exec" {
+    command = "sleep 5m"
+  }
+  triggers = {
+    always = uuid()
+  }
+  depends_on = [
+    null_resource.sleep1
+  ]
+}
+
+resource "null_resource" "sleep3" {
+  provisioner "local-exec" {
+    command = "sleep 5m"
+  }
+  triggers = {
+    always = uuid()
+  }
+  depends_on = [
+    null_resource.sleep2
+  ]
 }
